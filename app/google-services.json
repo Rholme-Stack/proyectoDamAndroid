@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "97663997028",
+    "project_id": "proyectodam-215b6",
+    "storage_bucket": "proyectodam-215b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97663997028:android:1de35c4c46601456c77b71",
+        "android_client_info": {
+          "package_name": "com.example.proyectodam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97663997028-9v58vbkee77q0isko1bt0osmnie7hiv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApOshtOlBdcQxBalighZ0wVQ5CdcZbWZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97663997028-9v58vbkee77q0isko1bt0osmnie7hiv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
