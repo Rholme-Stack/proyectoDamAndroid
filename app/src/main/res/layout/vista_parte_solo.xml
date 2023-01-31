@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    app:cardBackgroundColor="#E4ED8E"
+    app:cardBackgroundColor="@color/teal_200"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
@@ -16,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -26,6 +28,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/ivDelete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -45,9 +48,18 @@
                     android:layout_weight="1"
                     android:text="Poblacion"
                     android:textSize="24dp" />
+
             </LinearLayout>
 
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imgDel"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/baseline_delete_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -21,15 +21,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:srcCompat="@drawable/teambike_logo_blanco" />
+            app:srcCompat="@drawable/teambike_logo_blanco" />
 
         <Button
             android:id="@+id/btnAddFrag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Añadir Visita" />
 
         <androidx.recyclerview.widget.RecyclerView
