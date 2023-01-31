@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link create_parte_Fragment#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
 public class create_parte_Fragment extends DialogFragment {
@@ -31,7 +36,6 @@ public class create_parte_Fragment extends DialogFragment {
     Button btnAnadirReg;
     EditText etCliente, etPoblacion, etComentarios;
     private FirebaseFirestore miFirestore;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
@@ -43,6 +47,7 @@ public class create_parte_Fragment extends DialogFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_create_parte_, container, false);
+       //instacia firebase
         miFirestore = FirebaseFirestore.getInstance();
 
         etCliente = vista.findViewById(R.id.etCliente);
@@ -57,11 +62,16 @@ public class create_parte_Fragment extends DialogFragment {
                 String Nombre = etCliente.getText().toString().trim();
                 String Poblacion = etPoblacion.getText().toString().trim();
                 String Cometarios = etComentarios.getText().toString().trim();
+                //Date Fecha = new Date(); CharSequence s = DateFormat.format("dd/MM/yyyy ", Fecha.getTime());
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String Fecha = sdf.format(new Date());
+
 
                 if(Nombre.isEmpty() || Poblacion.isEmpty() || Cometarios.isEmpty()){
                     Toast.makeText(getContext(), "Rellenar todos los campos!", Toast.LENGTH_SHORT).show();
                 }else{
-                    insertVisita(Nombre, Poblacion, Cometarios);
+
+                    insertVisita(Nombre, Poblacion, Cometarios, Fecha);
                 }
             }
 
@@ -69,11 +79,12 @@ public class create_parte_Fragment extends DialogFragment {
         return vista;
     }
 
-    private void insertVisita(String nombre, String poblacion, String cometarios) {
+    private void insertVisita(String nombre, String poblacion, String cometarios, String Fecha) {
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombre);
-        map.put("población", poblacion);
-        map.put("cometarios", cometarios);
+        map.put("poblacion", poblacion);
+        map.put("comentarios", cometarios);
+        map.put("fecha", Fecha);
 
 
         miFirestore.collection("visita").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
