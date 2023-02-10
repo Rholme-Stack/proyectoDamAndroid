@@ -1,5 +1,6 @@
 package com.example.proyectodam;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -49,7 +50,7 @@ public class create_parte_Fragment extends DialogFragment {
         View vista = inflater.inflate(R.layout.fragment_create_parte_, container, false);
        //instacia firebase
         miFirestore = FirebaseFirestore.getInstance();
-
+        //Recoge las variables
         etCliente = vista.findViewById(R.id.etCliente);
         etPoblacion = vista.findViewById(R.id.etPoblacion);
         etComentarios = vista.findViewById(R.id.etComentarios);
@@ -63,12 +64,16 @@ public class create_parte_Fragment extends DialogFragment {
                 String Poblacion = etPoblacion.getText().toString().trim();
                 String Cometarios = etComentarios.getText().toString().trim();
                 //Date Fecha = new Date(); CharSequence s = DateFormat.format("dd/MM/yyyy ", Fecha.getTime());
+                //Se recoge la fecha actual aqui en este variable y se pone formato
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 String Fecha = sdf.format(new Date());
 
 
                 if(Nombre.isEmpty() || Poblacion.isEmpty() || Cometarios.isEmpty()){
-                    Toast.makeText(getContext(), "Rellenar todos los campos!", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(requireContext(), "Rellenar todos los campos!", Toast.LENGTH_SHORT).show();
+
+
                 }else{
 
                     insertVisita(Nombre, Poblacion, Cometarios, Fecha);
@@ -96,7 +101,7 @@ public class create_parte_Fragment extends DialogFragment {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getContext(), "Error al insertar datos!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Error al insertar datos!", Toast.LENGTH_LONG).show();
             }
         });
     }

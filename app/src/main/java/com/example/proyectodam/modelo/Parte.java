@@ -1,6 +1,9 @@
 package com.example.proyectodam.modelo;
 
+import java.util.Comparator;
+
 public class Parte {
+
     String nombre, poblacion, comentarios, fecha;
 
     public Parte() {

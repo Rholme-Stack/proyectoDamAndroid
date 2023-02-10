@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         //declarar firestore para recyclerView
         mainFirestore = FirebaseFirestore.getInstance();
+
         mainRecycler = findViewById(R.id.rvMain);
         mainRecycler.setLayoutManager(new LinearLayoutManager(this));
         Query query = mainFirestore.collection("visita");
@@ -40,15 +41,6 @@ public class MainActivity extends AppCompatActivity {
         mainAdaptador.notifyDataSetChanged();
         mainRecycler.setAdapter(mainAdaptador);
 
-
-
-        /*BtnAnadir = findViewById(R.id.btnAnadir);
-        BtnAnadir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    startActivity(new Intent(MainActivity.this, CreateParte.class));
-            }
-        });*/
 
 
         //Botón para abrir el Fragment e insertar datos

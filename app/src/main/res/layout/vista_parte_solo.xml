@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:background="@color/verde">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fecha"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -39,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Nombre"
+                    android:textColor="@color/white"
                     android:textSize="24dp" />
 
                 <TextView
@@ -47,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Poblacion"
+                    android:textColor="@color/white"
                     android:textSize="24dp" />
 
             </LinearLayout>

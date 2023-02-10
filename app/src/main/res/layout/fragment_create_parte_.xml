@@ -70,7 +70,10 @@
             android:id="@+id/btnAnadirReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Añadir" />
+            android:backgroundTint="@color/verde"
+            android:text="Añadir"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp" />
 
 
 

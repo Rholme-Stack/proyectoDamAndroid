@@ -30,8 +30,15 @@
             android:id="@+id/btnAddFrag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/teal_700"
-            android:text="Añadir Visita" />
+            android:backgroundTint="@color/verde"
+            android:text="Añadir Visita"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/purple_200" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMain"

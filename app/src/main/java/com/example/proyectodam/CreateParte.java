@@ -19,6 +19,12 @@ import java.util.Map;
 
 public class CreateParte extends AppCompatActivity {
 
+    /* Clase utilizada en el primer proyecto pero que ha sido sustituida por el fragment,
+     se mantiene por si volvemos a utilizarla en el futuro.*/
+
+
+
+
     Button btnAnadirReg;
     EditText etCliente, etPoblacion, etComentarios;
     private FirebaseFirestore miFirestore;
@@ -29,11 +35,13 @@ public class CreateParte extends AppCompatActivity {
         setContentView(R.layout.activity_create_parte);
 
         setTitle("Crear Parte de Visita");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //instancia del Firestore
         miFirestore = FirebaseFirestore.getInstance();
 
-
+        // Recoge lso input
         etCliente = findViewById(R.id.etCliente);
         etPoblacion = findViewById(R.id.etPoblacion);
         etComentarios = findViewById(R.id.etComentarios);
@@ -55,7 +63,7 @@ public class CreateParte extends AppCompatActivity {
 
         });
     }
-
+        // Función para insertar la visita
     private void insertVisita(String nombre, String poblacion, String cometarios) {
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombre);
